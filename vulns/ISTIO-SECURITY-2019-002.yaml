@@ -1,0 +1,14 @@
+name: ISTIO-SECURITY-2019-002
+link: https://istio.io/latest/news/security/istio-security-2019-002/
+published: 2019-06-28T00:00Z
+description: Denial of service affecting JWT access token parsing
+cvss:
+  scoreV3: 7.5
+  vectorV3: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:F/RL:O/RC:C
+affected:
+- range: ">= 1.0, < 1.0.9"
+  fixedBy: "1.0.9"
+- range: ">= 1.1, < 1.1.10"
+  fixedBy: "1.1.10"
+- range: ">= 1.2, < 1.2.2"
+  fixedBy: "1.2.2"
