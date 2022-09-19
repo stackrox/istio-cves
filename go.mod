@@ -1,6 +1,6 @@
 module github.com/stackrox/istio-cves
 
-go 1.19
+go 1.18
 
 require (
 	github.com/facebookincubator/nvdtools v0.1.5
