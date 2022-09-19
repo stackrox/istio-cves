@@ -1,0 +1,13 @@
+name: ISTIO-SECURITY-2021-003
+link: https://istio.io/latest/news/security/istio-security-2021-003/
+published: 2021-04-15T00:00Z
+description: Envoy, and subsequently Istio, is vulnerable to several newly discovered vulnerabilities CVE-2021-28683, CVE-2021-28682, CVE-2021-29258
+cvss:
+  scoreV3: 7.5
+  vectorV3: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+affected:
+- range: "< 1.8.5"
+  fixedBy: "1.8.5"
+- range: ">= 1.9.0, < 1.9.3"
+  fixedBy: "1.9.3"
+

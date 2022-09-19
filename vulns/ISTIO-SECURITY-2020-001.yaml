@@ -4,9 +4,10 @@ published: 2020-02-11T00:00Z
 description: Authentication Policy bypass
 cvss:
   scoreV3: 9.0
-  vectorV3: AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H
+  vectorV3: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:C/C:H/I:H/A:H
 affected:
 - range: ">= 1.3, < 1.3.8"
   fixedBy: "1.3.8"
-- range: ">= 1.4, < 1.4.3"
-  fixedBy: "1.4.3"
+- range: ">= 1.4, < 1.4.4"
+  fixedBy: "1.4.4"
+

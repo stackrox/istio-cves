@@ -1,0 +1,14 @@
+name: ISTIO-SECURITY-2021-007
+link: https://istio.io/latest/news/security/istio-security-2021-007/
+published: 2021-06-24T00:00Z
+description: Istio contains a remotely exploitable vulnerability where credentials specified in the Gateway and DestinationRule credentialName field can be accessed from different namespaces
+cvss:
+  scoreV3: 9.1
+  vectorV3: CVSS:3.1/AV:N/AC:L/PR:L/UI:N/S:C/C:H/I:L/A:L
+affected:
+- range: ">= 1.8, < 1.9.6"
+  fixedBy: "1.9.6"
+- range: ">= 1.10.0, < 1.10.2 "
+  fixedBy: "1.10.2 "
+
+

@@ -1,0 +1,15 @@
+name: ISTIO-SECURITY-2022-003
+link: https://istio.io/latest/news/security/istio-security-2022-003/
+published: 2022-02-22T00:00Z
+description: Multiple CVEs related to istiod Denial of Service and Envoy
+cvss:
+  scoreV3: 7.5
+  vectorV3: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+affected:
+- range: "< 1.11.7"
+  fixedBy: "1.11.7"
+- range: ">= 1.12.0, < 1.12.4"
+  fixedBy: "1.12.4"
+- range: ">= 1.13.0, < 1.13.1"
+  fixedBy: "1.13.1"
+

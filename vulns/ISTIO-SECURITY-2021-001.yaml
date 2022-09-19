@@ -1,0 +1,11 @@
+name: ISTIO-SECURITY-2021-001
+link: https://istio.io/latest/news/security/istio-security-2021-001/
+published: 2021-03-01T00:00Z
+description: JWT authentication can be bypassed when AuthorizationPolicy is misused
+cvss:
+  scoreV3: 8.2
+  vectorV3: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:H/I:L/A:N
+affected:
+- range: ">= 1.9.0, < 1.9.1"
+  fixedBy: "1.9.1"
+

@@ -1,0 +1,13 @@
+name: ISTIO-SECURITY-2020-009
+link: https://istio.io/latest/news/security/istio-security-2020-009/
+published: 2020-08-11T00:00Z
+description: Incorrect Envoy configuration for wildcard suffixes used for Principals/Namespaces in Authorization Policies for TCP Services
+cvss:
+  scoreV3: 6.8
+  vectorV3: CVSS:3.1/AV:N/AC:H/PR:L/UI:N/S:U/C:H/I:H/A:N
+affected:
+- range: ">= 1.5, < 1.5.9"
+  fixedBy: "1.5.9"
+- range: ">= 1.6, < 1.6.8"
+  fixedBy: "1.6.8"
+

@@ -7,7 +7,6 @@ import (
 
 	"github.com/ghodss/yaml"
 	"github.com/pkg/errors"
-	"github.com/stackrox/istio-cves"
 )
 
 const (
@@ -33,12 +32,12 @@ func main() {
 			return err
 		}
 
-		var cveFile istio.Vuln
-		if err := yaml.Unmarshal(bytes, &cveFile); err != nil {
+		var vuln Vuln
+		if err := yaml.Unmarshal(bytes, &vuln); err != nil {
 			return errors.Wrapf(err, "unable to unmarshal %s", path)
 		}
 
-		if err := validate(path, &cveFile); err != nil {
+		if err := validate(path, &vuln); err != nil {
 			return errors.Wrapf(err, "CVE file %s is invalid", path)
 		}
 

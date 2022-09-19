@@ -10,3 +10,4 @@ affected:
   fixedBy: "1.1.13"
 - range: ">= 1.2, < 1.2.4"
   fixedBy: "1.2.4"
+

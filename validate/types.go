@@ -1,4 +1,4 @@
-package istio
+package main
 
 import (
 	"time"

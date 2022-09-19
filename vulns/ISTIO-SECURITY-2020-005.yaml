@@ -1,0 +1,13 @@
+name: ISTIO-SECURITY-2020-005
+link: https://istio.io/latest/news/security/istio-security-2020-005/
+published: 2020-05-12T00:00Z
+description: Denial of service affecting telemetry v2
+cvss:
+  scoreV3: 7.5
+  vectorV3: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+affected:
+- range: ">= 1.4, < 1.4.9"
+  fixedBy: "1.4.9"
+- range: ">= 1.5, < 1.5.4"
+  fixedBy: "1.5.4"
+
