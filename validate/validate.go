@@ -75,7 +75,7 @@ func validateCVSS(cvss CVSS) error {
 	}
 
 	if err := validateCVSSv3(cvss.ScoreV3, cvss.VectorV3); err != nil {
-		return errors.Wrap(err, "invalid nvd CVSS3")
+		return errors.Wrap(err, "invalid CVSS3")
 	}
 
 	return nil

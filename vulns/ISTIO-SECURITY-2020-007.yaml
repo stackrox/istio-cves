@@ -6,8 +6,8 @@ cvss:
   scoreV3: 7.5
   vectorV3: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
 affected:
-- range: ">= 1.5, < 1.5.6"
-  fixedBy: "1.5.6"
-- range: ">= 1.6, < 1.6.3"
-  fixedBy: "1.6.3"
+- range: ">= 1.5, < 1.5.7"
+  fixedBy: "1.5.7"
+- range: ">= 1.6, < 1.6.4"
+  fixedBy: "1.6.4"
 
