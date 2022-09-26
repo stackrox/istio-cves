@@ -2,11 +2,7 @@
 
 This repository is meant to be a single source of truth for 
 Istio-related CVEs. The data gathered here is meant to be as up-to-date
-as possible. Currently, the data comes from a combination of:
-
-* NVD
-* Istio Security issues
-* This is the current sole source of data [istio-security-bulletin](https://istio.io/latest/news/security/)
+as possible. Currently, the data comes from Announcements from [istio-security-bulletin](https://istio.io/latest/news/security/)
 
 Though this repository is meant to be a single source of truth,
 there may be mistakes. We try to keep everything as accurate and up-to-date
@@ -15,6 +11,7 @@ or data to be input incorrectly. If you find any incorrect data, please feel fre
 to make a pull request, and we will review it.
 
 This repository doesn't include ISTIO-SECURITY-2020-011, ISTIO-SECURITY-2021-002, ISTIO-SECURITY-2021-004 since those are not associated with any CVEs, but rather they are suggestions from Istio.
+
 ## YAML Format
 
 ```yaml
@@ -23,8 +20,8 @@ link: URL for the vulnerability. This will typically be a link to Istio vluneral
 published: 'Date Istio vluneralbility was first published publicly (ex: 2022-02-22T00:00Z)'
 description: Istio vluneralbility description
 cvss:
-  scoreV3: NVD V3 score
-  vectorV3: NVD V3 vector
+  scoreV3: V3 score
+  vectorV3: V3 vector
 affected:
   # list of version constraints affected by the vulnerability
   # with corresponding fix version, if it exists.

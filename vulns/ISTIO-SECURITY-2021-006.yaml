@@ -8,6 +8,6 @@ cvss:
 affected:
 - range: "< 1.8.6"
   fixedBy: "1.8.6"
-- range: "< 1.9.5"
+- range: ">= 1.9, < 1.9.5"
   fixedBy: "1.9.5"
 

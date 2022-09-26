@@ -16,10 +16,9 @@ const (
 )
 
 var (
-	firstPublishedCVE time.Time
+	firstPublishedCVE = time.Time{}
 
 	vulnPattern = regexp.MustCompile(`^ISTIO-SECURITY-(\d{4})-(\d{3})$`)
-	urlPattern  = regexp.MustCompile(`^https?://`)
 )
 
 func init() {
@@ -48,7 +47,7 @@ func validate(fileName string, vuln *Vuln) error {
 
 	// Validate published.
 	if vuln.Published.Before(firstPublishedCVE) {
-		return errors.New("published time must be specified and of format 2006-01-02")
+		return errors.Errorf("published time must be before %s", firstPublishedCVE.String())
 	}
 
 	// Validate description.
