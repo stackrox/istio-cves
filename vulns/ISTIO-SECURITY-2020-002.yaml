@@ -1,0 +1,11 @@
+name: ISTIO-SECURITY-2020-002
+link: https://istio.io/latest/news/security/istio-security-2020-002/
+published: 2020-02-11T00:00Z
+description: Mixer policy check bypass caused by improperly accepting certain request headers
+cvss:
+  scoreV3: 7.4
+  vectorV3: CVSS:3.1/AV:N/AC:H/PR:N/UI:N/S:U/C:H/I:H/A:N
+affected:
+- range: ">= 1.3, < 1.3.7"
+  fixedBy: "1.3.7"
+

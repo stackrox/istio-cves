@@ -1,0 +1,32 @@
+# This workflow will validate the CVE yaml files.
+name: CVE YAML Validation
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up Go 1.x
+        uses: actions/setup-go@v3
+        with:
+          go-version: ^1.18
+
+      - name: Check out code into the Go module directory
+        uses: actions/checkout@v3
+
+      - name: Format Go code
+        run: |
+          go fmt ./...
+          if ! git diff --exit-code HEAD; then
+            echo
+            echo "*** Files are not formatted properly. See the above diff for more info."
+            exit 1
+          fi
+      - name: Validate CVEs
+        run: go run -v ./validate

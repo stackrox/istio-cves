@@ -1,0 +1,13 @@
+name: ISTIO-SECURITY-2020-004
+link: https://istio.io/latest/news/security/istio-security-2020-004/
+published: 2020-03-25T00:00Z
+description: Default Kiali security configuration allows full control of mesh
+cvss:
+  scoreV3: 8.7
+  vectorV3: CVSS:3.1/AV:A/AC:L/PR:L/UI:N/S:C/C:H/I:H/A:N
+affected:
+- range: ">= 1.4, < 1.4.7"
+  fixedBy: "1.4.7"
+- range: ">= 1.5, < 1.5.1"
+  fixedBy: "1.5.1"
+

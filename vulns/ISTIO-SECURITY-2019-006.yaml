@@ -1,0 +1,11 @@
+name: ISTIO-SECURITY-2019-006
+link: https://istio.io/latest/news/security/istio-security-2019-006/
+published: 2019-11-07T00:00Z
+description: Denial of service
+cvss:
+  scoreV3: 7.5
+  vectorV3: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+affected:
+- range: ">= 1.3, < 1.3.5"
+  fixedBy: "1.3.5"
+

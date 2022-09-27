@@ -1,0 +1,13 @@
+name: ISTIO-SECURITY-2020-008
+link: https://istio.io/latest/news/security/istio-security-2020-008/
+published: 2020-07-09T00:00Z
+description: Incorrect validation of wildcard DNS Subject Alternative Names
+cvss:
+  scoreV3: 6.6
+  vectorV3: CVSS:3.1/AV:N/AC:H/PR:H/UI:N/S:C/C:H/I:L/A:N
+affected:
+- range: "< 1.5.8"
+  fixedBy: "1.5.8"
+- range: ">= 1.6, < 1.6.5"
+  fixedBy: "1.6.5"
+

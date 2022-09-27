@@ -1,0 +1,11 @@
+name: ISTIO-SECURITY-2022-001
+link: https://istio.io/latest/news/security/istio-security-2022-001/
+published: 2022-01-18T00:00Z
+description: Authorization Policy For Host Rules During Upgrades
+cvss:
+  scoreV3: 6.8
+  vectorV3: CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N
+affected:
+- range: ">= 1.12.0, < 1.12.2"
+  fixedBy: "1.12.2"
+

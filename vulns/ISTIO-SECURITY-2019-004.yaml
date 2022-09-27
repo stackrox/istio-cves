@@ -1,0 +1,13 @@
+name: ISTIO-SECURITY-2019-004
+link: https://istio.io/latest/news/security/istio-security-2019-004/
+published: 2019-08-13T00:00Z
+description: Multiple denial of service vulnerabilities related to HTTP2 support in Envoy
+cvss:
+  scoreV3: 7.5
+  vectorV3: CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+affected:
+- range: ">= 1.1, < 1.1.13"
+  fixedBy: "1.1.13"
+- range: ">= 1.2, < 1.2.4"
+  fixedBy: "1.2.4"
+
