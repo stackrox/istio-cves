@@ -2,7 +2,7 @@
 
 This repository is meant to be a single source of truth for 
 Istio-related CVEs. The data gathered here is meant to be as up-to-date
-as possible. Currently, the data comes from Announcements from [istio-security-bulletin](https://istio.io/latest/news/security/)
+as possible. Currently, the data comes from announcements from [istio-security-bulletin](https://istio.io/latest/news/security/)
 
 Though this repository is meant to be a single source of truth,
 there may be mistakes. We try to keep everything as accurate and up-to-date
