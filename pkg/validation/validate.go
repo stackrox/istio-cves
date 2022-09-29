@@ -1,4 +1,4 @@
-package main
+package validation
 
 import (
 	"fmt"
@@ -29,7 +29,8 @@ func init() {
 	}
 }
 
-func validate(fileName string, vuln *Vuln) error {
+// Validate yaml files
+func Validate(fileName string, vuln *Vuln) error {
 	// Validate vuln name.
 	if !vulnPattern.MatchString(vuln.Name) {
 		return errors.Errorf("Vuln name must adhere to the pattern %q: %s", vulnPattern.String(), vuln.Name)
