@@ -1,7 +1,8 @@
-package validation
+package main
 
 import (
 	"fmt"
+	"github.com/stackrox/istio-cves/types"
 	"regexp"
 	"strings"
 	"time"
@@ -23,14 +24,14 @@ var (
 
 func init() {
 	var err error
-	firstPublishedCVE, err = time.Parse(TimeLayout, "2019-05-28T00:00Z")
+	firstPublishedCVE, err = time.Parse(types.TimeLayout, "2019-05-28T00:00Z")
 	if err != nil {
 		panic("Should not happen")
 	}
 }
 
 // Validate yaml files
-func Validate(fileName string, vuln *Vuln) error {
+func Validate(fileName string, vuln *types.Vuln) error {
 	// Validate vuln name.
 	if !vulnPattern.MatchString(vuln.Name) {
 		return errors.Errorf("Vuln name must adhere to the pattern %q: %s", vulnPattern.String(), vuln.Name)
@@ -69,7 +70,7 @@ func Validate(fileName string, vuln *Vuln) error {
 	return nil
 }
 
-func validateCVSS(cvss CVSS) error {
+func validateCVSS(cvss types.CVSS) error {
 	if cvss.ScoreV3 <= 0.0 {
 		return errors.New("scoreV3 must be defined and greater than 0.0")
 	}
@@ -98,7 +99,7 @@ func validateCVSSv3(score float64, vector string) error {
 	return nil
 }
 
-func validateAffected(affects []Affected) error {
+func validateAffected(affects []types.Affected) error {
 	if len(affects) == 0 {
 		return errors.New("affected must be defined")
 	}
