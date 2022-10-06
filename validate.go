@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"github.com/stackrox/istio-cves/types"
 	"regexp"
 	"strings"
 	"time"
@@ -10,6 +9,7 @@ import (
 	"github.com/facebookincubator/nvdtools/cvss3"
 	"github.com/hashicorp/go-version"
 	"github.com/pkg/errors"
+	"github.com/stackrox/istio-cves/types"
 )
 
 const (
@@ -30,39 +30,39 @@ func init() {
 	}
 }
 
-// Validate yaml files
-func Validate(fileName string, vuln *types.Vuln) error {
-	// Validate vuln name.
+// validate yaml files
+func validate(fileName string, vuln *types.Vuln) error {
+	// validate vuln name.
 	if !vulnPattern.MatchString(vuln.Name) {
 		return errors.Errorf("Vuln name must adhere to the pattern %q: %s", vulnPattern.String(), vuln.Name)
 	}
 
-	// Validate file name.
+	// validate file name.
 	if !strings.HasSuffix(fileName, vuln.Name+".yaml") {
 		return errors.Errorf("file name must match CVE (%q)", vuln.Name)
 	}
 
-	// Validate link format
+	// validate link format
 	if vuln.Link != fmt.Sprintf(linkFmt, strings.ToLower(vuln.Name)) {
 		return errors.Errorf("Vuln link must include vlun name %s: %s", vuln.Link, vuln.Name)
 	}
 
-	// Validate published.
+	// validate published.
 	if vuln.Published.Before(firstPublishedCVE) {
 		return errors.Errorf("published time must be before %s", firstPublishedCVE.String())
 	}
 
-	// Validate description.
+	// validate description.
 	if len(strings.TrimSpace(vuln.Description)) == 0 {
 		return errors.New("description must be defined")
 	}
 
-	// Validate CVSS.
+	// validate CVSS.
 	if err := validateCVSS(vuln.CVSS); err != nil {
 		return errors.Wrap(err, "invalid CVSS field")
 	}
 
-	// Validate affected.
+	// validate affected.
 	if err := validateAffected(vuln.Affected); err != nil {
 		return errors.Wrap(err, "invalid affected field")
 	}
