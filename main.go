@@ -7,6 +7,7 @@ import (
 
 	"github.com/ghodss/yaml"
 	"github.com/pkg/errors"
+	"github.com/stackrox/istio-cves/types"
 )
 
 const (
@@ -32,7 +33,7 @@ func main() {
 			return err
 		}
 
-		var vuln Vuln
+		var vuln types.Vuln
 		if err := yaml.Unmarshal(bytes, &vuln); err != nil {
 			return errors.Wrapf(err, "unable to unmarshal %s", path)
 		}

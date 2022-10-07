@@ -9,6 +9,7 @@ import (
 	"github.com/facebookincubator/nvdtools/cvss3"
 	"github.com/hashicorp/go-version"
 	"github.com/pkg/errors"
+	"github.com/stackrox/istio-cves/types"
 )
 
 const (
@@ -23,44 +24,45 @@ var (
 
 func init() {
 	var err error
-	firstPublishedCVE, err = time.Parse(TimeLayout, "2019-05-28T00:00Z")
+	firstPublishedCVE, err = time.Parse(types.TimeLayout, "2019-05-28T00:00Z")
 	if err != nil {
 		panic("Should not happen")
 	}
 }
 
-func validate(fileName string, vuln *Vuln) error {
-	// Validate vuln name.
+// validate yaml files
+func validate(fileName string, vuln *types.Vuln) error {
+	// validate vuln name.
 	if !vulnPattern.MatchString(vuln.Name) {
 		return errors.Errorf("Vuln name must adhere to the pattern %q: %s", vulnPattern.String(), vuln.Name)
 	}
 
-	// Validate file name.
+	// validate file name.
 	if !strings.HasSuffix(fileName, vuln.Name+".yaml") {
 		return errors.Errorf("file name must match CVE (%q)", vuln.Name)
 	}
 
-	// Validate link format
+	// validate link format
 	if vuln.Link != fmt.Sprintf(linkFmt, strings.ToLower(vuln.Name)) {
 		return errors.Errorf("Vuln link must include vlun name %s: %s", vuln.Link, vuln.Name)
 	}
 
-	// Validate published.
+	// validate published.
 	if vuln.Published.Before(firstPublishedCVE) {
 		return errors.Errorf("published time must be before %s", firstPublishedCVE.String())
 	}
 
-	// Validate description.
+	// validate description.
 	if len(strings.TrimSpace(vuln.Description)) == 0 {
 		return errors.New("description must be defined")
 	}
 
-	// Validate CVSS.
+	// validate CVSS.
 	if err := validateCVSS(vuln.CVSS); err != nil {
 		return errors.Wrap(err, "invalid CVSS field")
 	}
 
-	// Validate affected.
+	// validate affected.
 	if err := validateAffected(vuln.Affected); err != nil {
 		return errors.Wrap(err, "invalid affected field")
 	}
@@ -68,7 +70,7 @@ func validate(fileName string, vuln *Vuln) error {
 	return nil
 }
 
-func validateCVSS(cvss CVSS) error {
+func validateCVSS(cvss types.CVSS) error {
 	if cvss.ScoreV3 <= 0.0 {
 		return errors.New("scoreV3 must be defined and greater than 0.0")
 	}
@@ -97,7 +99,7 @@ func validateCVSSv3(score float64, vector string) error {
 	return nil
 }
 
-func validateAffected(affects []Affected) error {
+func validateAffected(affects []types.Affected) error {
 	if len(affects) == 0 {
 		return errors.New("affected must be defined")
 	}

@@ -29,4 +29,4 @@ jobs:
             exit 1
           fi
       - name: Validate CVEs
-        run: go run -v ./validate
+        run: go run -v ./
