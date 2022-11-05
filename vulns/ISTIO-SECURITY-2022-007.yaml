@@ -1,0 +1,15 @@
+name: ISTIO-SECURITY-2022-007
+link: https://istio.io/latest/news/security/istio-security-2022-007/
+published: 2022-10-12T00:00Z
+description: Denial of service attack due to Go Regex Library
+cvss:
+  scoreV3: 7.5
+  vectorV3: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+affected:
+- range: ">=1.13.0,<1.13.9"
+  fixedBy: "1.13.9"
+- range: ">=1.14.0, <1.14.5"
+  fixedBy: "1.14.5"
+- range: ">=1.15.0,<1.15.2"
+  fixedBy: "1.15.2"
+
