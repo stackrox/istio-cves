@@ -1,0 +1,17 @@
+name: ISTIO-SECURITY-2023-004
+link: https://istio.io/latest/news/security/istio-security-2023-004/
+published: 2023-10-11T00:00Z
+description: CVEs reported by Envoy and Go.
+cvss:
+  scoreV3: 7.5
+  vectorV3: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+affected:
+    # Note: It looks like Istio skips 1.17.7, so just say 1.17.7 is also affected. 1.17.8 fixes this.
+  - range: "<=1.17.7"
+    fixedBy: "1.17.8"
+    # Note: It looks like Istio skips 1.18.4, so just say 1.18.4 is also affected. 1.18.5 fixes this.
+  - range: ">=1.18, <= 1.18.4"
+    fixedBy: "1.18.5"
+    # Note: It looks like Istio skips 1.19.2, so just say 1.19.2 is also affected. 1.19.3 fixes this.
+  - range: ">=1.19, <= 1.19.2"
+    fixedBy: "1.19.3"
