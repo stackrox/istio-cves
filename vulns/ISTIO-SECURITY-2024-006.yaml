@@ -1,0 +1,12 @@
+name: ISTIO-SECURITY-2024-006
+link: https://istio.io/latest/news/security/istio-security-2024-006/
+published: 2024-09-19T00:00Z
+description: CVEs reported by Envoy.
+cvss:
+  scoreV3: 7.5
+  vectorV3: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+affected:
+  - range: ">=1.22, <= 1.22.4"
+    fixedBy: "1.22.5"
+  - range: ">=1.23, <= 1.23.1"
+    fixedBy: "1.23.2"
