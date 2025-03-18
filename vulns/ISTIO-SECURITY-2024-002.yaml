@@ -1,0 +1,14 @@
+name: ISTIO-SECURITY-2024-002
+link: https://istio.io/latest/news/security/istio-security-2024-002/
+published: 2024-04-08T00:00Z
+description: CVEs reported by Envoy and Go.
+cvss:
+  scoreV3: 7.5
+  vectorV3: CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H
+affected:
+  - range: "<= 1.19.8"
+    fixedBy: "1.19.9"
+  - range: ">=1.20, <= 1.20.4"
+    fixedBy: "1.20.5"
+  - range: ">=1.21, <= 1.21.0"
+    fixedBy: "1.21.1"
